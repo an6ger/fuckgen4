@@ -1098,7 +1098,7 @@ do
             }
             --
             local esppreview_title = utility:Create("TextLabel", {Vector2.new(4,2), esppreview_inner}, {
-                Text = "ESP Preview",
+                Text = "EEEE",
                 Size = theme.textsize,
                 Font = theme.font,
                 Color = theme.textcolor,
