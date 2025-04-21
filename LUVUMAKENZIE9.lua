@@ -911,7 +911,7 @@ do
         --
         theme.accent = accent
         --
-        local window = {pages = {}, loader = style == 2, init = false, pageammount = pageammount, isVisible = false, callback = callback, uibind = Enum.KeyCode.Insert, wminfo = "$$$$$ AntarcticaWare $$$$$ || UID : %u || Ping : %s || Fps : %u", currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = nil, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil, textbox = nil}}
+        local window = {pages = {}, loader = style == 2, init = false, pageammount = pageammount, isVisible = false, callback = callback, uibind = Enum.KeyCode.Z, wminfo = "$$$$$ AntarcticaWare $$$$$ || UID : %u || Ping : %s || Fps : %u", currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = nil, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil, textbox = nil}}
         --
         local main_frame = utility:Create("Frame", {Vector2.new(0,0)}, {
             Size = utility:Size(0, size.X, 0, size.Y),
@@ -1027,6 +1027,60 @@ do
                 MaxColor.B + (MinColor.B - MaxColor.B) * Value
             )
         end
+        -- // Esp Preview
+        do
+            window.VisualPreview = {
+                Size = {X = 5, Y = 0},
+                Color1 = Color3.fromRGB(0, 255, 0),
+                Color2 = Color3.fromRGB(255, 0, 0),
+                HealthBarFade = 0,
+                Fading = false,
+                State = false,
+                Visible = true,
+                Drawings = {},
+                Components = {
+                    Box = {
+                        Outline = nil,
+                        Box = nil,
+                        Fill = nil
+                    },
+                    HealthBar = {
+                        Outline = nil,
+                        Box = nil,
+                        Value = nil
+                    },
+                    Skeleton = {
+                        Head = {},
+                        Torso = {},
+                        LeftArm = {},
+                        RightArm = {},
+                        Hips = {},
+                        LeftLeg = {},
+                        RightLeg = {},
+                        HipsTorso = {}
+                    },
+                    Chams = {
+                        Head = {},
+                        Torso = {},
+                        LeftArm = {},
+                        RightArm = {},
+                        LeftLeg = {},
+                        RightLeg = {}
+                    },
+                    Title = {
+                        Text = nil
+                    },
+                    Distance = {
+                        Text = nil
+                    },
+                    Tool = {
+                        Text = nil
+                    },
+                    Flags = {
+                        Text = nil
+                    }
+                }
+            }
             --
             local esppreview_frame = utility:Create("Frame", {Vector2.new(main_frame.Size.X + 5,0), main_frame}, {
                 Size = utility:Size(0, 236, 0, 339),
