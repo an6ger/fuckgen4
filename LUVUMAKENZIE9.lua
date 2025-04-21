@@ -1027,7 +1027,22 @@ do
                 MaxColor.B + (MinColor.B - MaxColor.B) * Value
             )
         end
-       
+        -- // Esp Preview
+        do
+            window.VisualPreview = {
+                Size = {X = 5, Y = 0},
+                Color1 = Color3.fromRGB(0, 255, 0),
+                Color2 = Color3.fromRGB(255, 0, 0),
+                HealthBarFade = 0,
+                Fading = false,
+                State = false,
+                Visible = true,
+                Drawings = {},
+                Components = {
+                    Box = {
+                        Outline = nil,
+                        Box = nil,
+                        Fill = nil
                     },
                     HealthBar = {
                         Outline = nil,
@@ -1098,7 +1113,7 @@ do
             }
             --
             local esppreview_title = utility:Create("TextLabel", {Vector2.new(4,2), esppreview_inner}, {
-                Text = "EEEE",
+                Text = "ESP Preview",
                 Size = theme.textsize,
                 Font = theme.font,
                 Color = theme.textcolor,
